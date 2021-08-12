@@ -18,8 +18,7 @@
       <span *ngIf="fieldIsValid('name')"
         error-msg
         [color]="color"
-        [text]="nameErrorMsg"
-        >
+        [text]="nameErrorMsg">
       </span>
     </div>
 
@@ -48,3 +47,12 @@
 <h4 class="mt-5">FORM</h4>
 <pre>VALUE: {{myForm.value | json }}</pre>
 <pre>VALID: {{myForm.valid}}</pre>
+
+<div class="row mt-5"
+  *customIf="myForm.valid">
+  <div class="col">
+    <div class="alert alert-primary">
+      Everything OK
+    </div>
+  </div>
+</div>
