@@ -15,12 +15,11 @@
     </div>
 
     <div class="col auto">
-      <span
-        *ngIf="fieldIsValid('name')"
-        class="form-text"
+      <span *ngIf="fieldIsValid('name')"
         error-msg
-        color="purple">
-        Required field
+        [color]="color"
+        [text]="nameErrorMsg"
+        >
       </span>
     </div>
 
@@ -32,7 +31,16 @@
         Submit
       </button>
     </div>
+
+    <div class="col ms-3">
+      <button class="btn btn-primary"
+        (click)="changeColor()">
+        Color
+      </button>
+    </div>
   </div>
+
+
 
 </form>
 
